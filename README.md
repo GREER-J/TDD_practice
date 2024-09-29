@@ -11,3 +11,6 @@ Using [this](https://kata-log.rocks/) coding kata webpage
 ## Exercises
 ### Christmas lights
 [Link](https://kata-log.rocks/christmas-lights-kata)
+
+### Mars rover
+[Link](https://kata-log.rocks/mars-rover-kata)
