@@ -10,3 +10,9 @@ class LightGrid:
     @property
     def max_y(self) -> int:
         return self._max_y
+    
+    def is_light_on(self, row: int, col: int) -> bool:
+        return True
+    
+    def process_order(self, order: str) -> None:
+        pass
