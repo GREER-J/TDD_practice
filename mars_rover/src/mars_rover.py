@@ -7,4 +7,4 @@ class Rover:
     def go(self, instruction: str) -> 'Rover':
         compass = ['N', 'E', 'S', 'W']
         current_heading_idx = compass.index(self.facing)
-        return replace(self, facing=compass[current_heading_idx+1])
+        return replace(self, facing=compass[(current_heading_idx+1)%4])
