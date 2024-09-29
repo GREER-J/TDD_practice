@@ -1,9 +1,10 @@
 import re
 
 class LightGrid:
-    def __init__(self, max_x: int, max_y: int) -> None:
+    def __init__(self, max_x: int, max_y: int, debug:bool = False) -> None:
         self._max_x = max_x
         self._max_y = max_y
+        self._debug = debug
 
         # Init as all off
         self._light_grid  = [[False for _ in range(max_y)] for _ in range(max_x)]
@@ -41,10 +42,15 @@ class LightGrid:
             for y in range(start_y, fin_y + 1):
                 if order == "turn on":
                     self._light_grid[x][y] = True
-                    print(f"Turning on light at ({x}, {y})")
+
+                    if self._debug:
+                        print(f"Turning on light at ({x}, {y})")
                 elif order == "turn off":
                     self._light_grid[x][y] = False
-                    print(f"Turning off light at ({x}, {y})")
+                    if self._debug:
+                        print(f"Turning off light at ({x}, {y})")
                 elif order == "toggle":
                     self._light_grid[x][y] = not self._light_grid[x][y]
-                    print(f"Toggling light at ({x}, {y}) to {'on' if self._light_grid[x][y] else 'off'}")
+                    
+                    if self._debug:
+                        print(f"Toggling light at ({x}, {y}) to {'on' if self._light_grid[x][y] else 'off'}")
