@@ -8,3 +8,21 @@ turn off 499,499 through 500,500 would turn off (or leave off) the middle four l
 
 ## Analysis
 - Kata asks for outside in, testing high level first before doing lower level. 
+
+Valid orders:
+`turn on`: Turn on light
+`turn off`: Turn off light
+`toggle`: toggle light
+
+Format: "order start_x, start_y through fin_x, fin_y"
+
+### Orders
+turn on 887,9 through 959,629
+turn on 454,398 through 844,448
+turn off 539,243 through 559,965
+turn off 370,819 through 676,868
+turn off 145,40 through 370,997
+turn off 301,3 through 808,453
+turn on 351,678 through 951,908
+toggle 720,196 through 897,994
+toggle 831,394 through 904,860
