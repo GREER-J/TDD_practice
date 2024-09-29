@@ -10,8 +10,8 @@ from src.mars_rover import Rover
 def test_turn_right_clockwise(initial_position, initial_heading, exp_heading):
     """Rover turns right when asked, but stays put"""
     # GIVEN: We have a rover at position (0,0), facing 'N'
-    rover = Rover(initial_heading)
-    # assert r.position == x0
+    rover = Rover(initial_position, initial_heading)
+    assert rover.position == initial_position
     assert rover.facing == initial_heading
 
     # WHEN: we command turn right
@@ -19,6 +19,7 @@ def test_turn_right_clockwise(initial_position, initial_heading, exp_heading):
 
     # THEN: The rover should be facing 'E' still at (0,0)
     assert rover.facing == exp_heading
+    assert rover.position == initial_position
 
 @pytest.mark.parametrize("initial_position, initial_heading, exp_heading", [
     ((0,0), 'N', 'W'),
@@ -29,8 +30,8 @@ def test_turn_right_clockwise(initial_position, initial_heading, exp_heading):
 def test_turn_left_anti_clockwise(initial_position, initial_heading, exp_heading):
     """Rover turns left when asked, but stays put"""
     # GIVEN: We have a rover at position (0,0), facing 'N'
-    rover = Rover(initial_heading)
-    # assert r.position == x0
+    rover = Rover(initial_position, initial_heading)
+    assert rover.position == initial_position
     assert rover.facing == initial_heading
 
     # WHEN: we command turn right
@@ -38,3 +39,23 @@ def test_turn_left_anti_clockwise(initial_position, initial_heading, exp_heading
 
     # THEN: The rover should be facing 'E' still at (0,0)
     assert rover.facing == exp_heading
+    assert rover.position == initial_position
+
+@pytest.mark.parametrize("initial_position, initial_heading, exp_position",[
+    ((0,0), 'N', (0,1)),
+    ((0,0), 'E', (1,0)),
+    ((0,0), 'S', (0,-1)),
+    ((0,0), 'W', (-1,0))
+])
+def test_move_forward(initial_position, initial_heading, exp_position):
+    # GIVEN: We have a rover at a position, facing a direction
+    rover = Rover(initial_position, initial_heading)
+    assert rover.position == initial_position
+    assert rover.facing == initial_heading
+
+    # WHEN: We command it to go forward
+    rover = rover.go('F')
+
+    # THEN: The rover should be at position (0,1), facing 'N'
+    assert rover.position == exp_position
+    assert rover.facing == initial_heading
