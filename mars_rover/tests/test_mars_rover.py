@@ -1,3 +1,4 @@
+import pytest
 from dataclasses import dataclass
 
 @dataclass
