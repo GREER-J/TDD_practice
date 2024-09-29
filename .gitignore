@@ -3,3 +3,7 @@ christmas_lights/src/__pycache__/light_grid.cpython-311.pyc
 .vscode/settings.json
 christmas_lights/tests/__pycache__/test_christmas_lights.cpython-311-pytest-7.4.4.pyc
 christmas_lights/tests/__pycache__/__init__.cpython-311.pyc
+mars_rover/tests/__pycache__/test_mars_rover.cpython-311-pytest-7.4.4.pyc
+mars_rover/tests/__pycache__/__init__.cpython-311.pyc
+mars_rover/src/__pycache__/__init__.cpython-311.pyc
+mars_rover/src/__pycache__/mars_rover.cpython-311.pyc
