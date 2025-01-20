@@ -1,5 +1,5 @@
 import pytest
-from src.mars_rover import Rover
+from mars_rover.src.mars_rover import Rover
 
 @pytest.mark.parametrize("initial_position, initial_heading, exp_heading", [
     ((0,0), 'N', 'E'),

@@ -1,6 +1,8 @@
 {
     "python.testing.pytestArgs": [
-        "christmas_lights"
+    "christmas_lights",
+    "mars_rover",
+    "fizzbuzz"
     ],
     "python.testing.unittestEnabled": false,
     "python.testing.pytestEnabled": true
