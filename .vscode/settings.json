@@ -1,0 +1,7 @@
+{
+    "python.testing.pytestArgs": [
+        "christmas_lights"
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true
+}
