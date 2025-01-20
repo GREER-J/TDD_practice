@@ -6,11 +6,8 @@
     "python.testing.pytestArgs": [
         "christmas_lights",
         "mars_rover",
-        "fizzbuzz"
+        "fizz_buzz"
     ],
-
-    // Environment variables for tests
-    "python.envFile": "${workspaceFolder}/.env",
 
     // Disable unittest integration
     "python.testing.unittestEnabled": false
