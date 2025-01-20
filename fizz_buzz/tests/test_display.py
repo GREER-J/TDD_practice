@@ -9,7 +9,7 @@ class MockRender:
         self.display_render_count = 0
         self.render_history = []
 
-    def render(self, txt: str) -> str:
+    def render(self, txt: str) -> None:
         """Pretends to render output to the screen
 
         Args:
@@ -18,11 +18,9 @@ class MockRender:
         Returns:
             str: rendered output
         """
-        # TODO I don't think this should return anything
         render_str = f"x{txt}"
         self.render_history.append(render_str)
         self.display_render_count += 1
-        return render_str
 
 
 class MockModel:
@@ -53,11 +51,11 @@ def test_Display_calls_render():
     dis = Display(mock_render.render, mock_model.model)
 
     # When display is called with some text
-    res = dis.display('1')
+    dis.display('1')
 
     # THEN the render function is called and output returned
     exp = 'x1'
-    assert res == exp
+    assert mock_render.render_history[0] == exp
     assert dis.display_call_count == 1
 
 

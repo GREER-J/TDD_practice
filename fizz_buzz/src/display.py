@@ -13,9 +13,8 @@ class Display:
         Returns:
             str: rendered text
         """
-        #TODO remove this line, it doesn't need to be here
         self.display_call_count += 1
-        return self.render(text)
+        self.render(text)
 
     def show_numbers(self, max_val: int) -> None:
         """Generate the number sequence for FizzBuzz
