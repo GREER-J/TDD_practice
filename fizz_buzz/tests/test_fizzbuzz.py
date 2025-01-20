@@ -1,4 +1,4 @@
-from fizz_buzz.fizzbuzz import FizzBuzz
+from fizz_buzz.src.fizzbuzz import FizzBuzz
 import pytest
     
 @pytest.mark.parametrize("input, expected", [
