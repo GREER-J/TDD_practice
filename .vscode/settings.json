@@ -1,9 +1,17 @@
 {
+    // Configure pytest as the test framework
+    "python.testing.pytestEnabled": true,
+
+    // Specify pytest arguments (align with pytest.ini)
     "python.testing.pytestArgs": [
-    "christmas_lights",
-    "mars_rover",
-    "fizzbuzz"
+        "christmas_lights",
+        "mars_rover",
+        "fizzbuzz"
     ],
-    "python.testing.unittestEnabled": false,
-    "python.testing.pytestEnabled": true
+
+    // Environment variables for tests
+    "python.envFile": "${workspaceFolder}/.env",
+
+    // Disable unittest integration
+    "python.testing.unittestEnabled": false
 }
