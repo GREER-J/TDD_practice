@@ -9,6 +9,8 @@
         "fizz_buzz"
     ],
 
+    "python.terminal.activateEnvironment": true,
+
     // Disable unittest integration
     "python.testing.unittestEnabled": false
 }
