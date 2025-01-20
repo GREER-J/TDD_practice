@@ -1,26 +1,6 @@
 from fizz_buzz.src.display import Display
+from fizz_buzz.tests.mock_render import MockRender
 import pytest
-
-
-class MockRender:
-    """Mock render object for testing
-    """
-    def __init__(self) -> None:
-        self.display_render_count = 0
-        self.render_history = []
-
-    def render(self, txt: str) -> None:
-        """Pretends to render output to the screen
-
-        Args:
-            txt (str): text to render
-
-        Returns:
-            str: rendered output
-        """
-        render_str = f"x{txt}"
-        self.render_history.append(render_str)
-        self.display_render_count += 1
 
 
 class MockModel:
@@ -46,7 +26,7 @@ class MockModel:
 
 def test_Display_calls_render():
     # GIVEN we have a display with a render function
-    mock_render = MockRender()
+    mock_render = MockRender(str_addition='x')
     mock_model = MockModel()
     dis = Display(mock_render.render, mock_model.model)
 
@@ -90,7 +70,7 @@ def test_Display_calls_model():
 
 def test_Display_calls_model_with_expected_input():
     # GIVEN we have a display with render and model functions
-    mock_render = MockRender()
+    mock_render = MockRender(str_addition='x')
     mock_model = MockModel()
     dis = Display(mock_render.render, mock_model.model)
 

@@ -1,17 +1,7 @@
 from fizz_buzz.src.fizzbuzz import FizzBuzz
 from fizz_buzz.src.display import Display
-
-
-class MockRender:
-    def __init__(self) -> None:
-        self.display_render_count = 0
-        self.render_history = []
-        
-    def render(self, txt: str) -> str:
-        render_str = f"{txt}"
-        self.render_history.append(render_str)
-        self.display_render_count += 1
-        return render_str
+from fizz_buzz.tests.mock_render import MockRender
+import pytest
 
 
 def test_fizzbuzz_sequence_up_to_30():
@@ -34,3 +24,20 @@ def test_fizzbuzz_sequence_up_to_30():
         "26", "Fizz", "28", "29", "FizzBuzz"
     ]
     assert sequence == expected_sequence
+
+
+def test_raises_invalid_input_with_str():
+    fb = FizzBuzz()
+    with pytest.raises(ValueError):
+        fb.fizzbuzz("invalid_input")
+
+
+def test_raises_invalid_input_negative_int():
+    fb = FizzBuzz()
+    with pytest.raises(ValueError):
+        fb.fizzbuzz(-2)
+
+def test_raises_invalid_input_zero():
+    fb = FizzBuzz()
+    with pytest.raises(ValueError):
+        fb.fizzbuzz(0)

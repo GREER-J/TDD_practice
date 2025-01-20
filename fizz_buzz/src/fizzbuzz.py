@@ -13,6 +13,8 @@ class FizzBuzz:
         Returns:
             str: output of the sequence
         """
+        if not isinstance(number, int) or number <= 0:
+            raise ValueError(f"Invalid number input: {number}")
         rv = ''
         if number % 3 == 0:
             rv += 'Fizz'
