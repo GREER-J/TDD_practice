@@ -1,24 +1,17 @@
+import pytest
 from roman_numerals.src.convert import convert
+
+
+@pytest.mark.parametrize("fn_input, expected", [
+    (1, "I"),
+    (2, "II"),
+    (3, "III"),
+    ])
+def test_fn_returns_exp_input_for_output(fn_input, expected):
+    res = convert(fn_input)
+    assert res == expected, f"{res} does not equal {expected}"
 
 
 def test_fn_returns_str():
     res = convert(1)
     assert isinstance(res, str)
-
-
-def test_fn_returns_I_for_one():
-    res = convert(1)
-    exp = 'I'
-    assert res == exp, f"{res} does not equal {exp}"
-
-
-def test_fn_returns_II_for_two():
-    res = convert(2)
-    exp = 'II'
-    assert res == exp, f"{res} does not equal {exp}"
-
-
-def test_fn_returns_III_for_three():
-    res = convert(3)
-    exp = 'III'
-    assert res == exp, f"{res} does not equal {exp}"
