@@ -1,5 +1,5 @@
-from fizzbuzz import FizzBuzz
-from display import Display
+from fizz_buzz.fizzbuzz import FizzBuzz
+from fizz_buzz.display import Display
 
 class MockRender:
     def __init__(self) -> None:
