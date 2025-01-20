@@ -2,8 +2,7 @@ from roman_numerals.src.convert import convert
 
 def test_fn_returns_str():
     res = convert(1)
-    exp = 'I'
-    assert type(res) == type(exp)
+    assert isinstance(res, str)
 
 
 def test_fn_returns_I_for_one():
