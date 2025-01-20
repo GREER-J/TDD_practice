@@ -16,3 +16,9 @@ def test_fn_returns_II_for_two():
     res = convert(2)
     exp = 'II'
     assert res == exp, f"{res} does not equal {exp}"
+
+
+def test_fn_returns_III_for_three():
+    res = convert(3)
+    exp = 'III'
+    assert res == exp, f"{res} does not equal {exp}"
