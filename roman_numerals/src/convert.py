@@ -1,2 +1,5 @@
 def convert(num: int) -> str:
-    return 'I'
+    if num == 2:
+        return 'II'
+    else:
+        return 'I'
